@@ -1,0 +1,36 @@
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+C:\Users\Johann Carta\source\repos\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\BouncyCastle.Crypto.dll
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Google.Protobuf.dll
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\MySql.Data.dll
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Renci.SshNet.dll
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Ubiety.Dns.Core.dll
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Google.Protobuf.xml
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\MySql.Data.xml
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Renci.SshNet.xml
+D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
