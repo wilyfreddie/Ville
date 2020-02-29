@@ -157,9 +157,6 @@ namespace SAD_2E_Project
         {
 
         }
-
-   
-
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -208,6 +205,29 @@ namespace SAD_2E_Project
             PanelConnection.Visible = true;
         }
 
+        private void ClearInputUpdateData()
+        {
+            TextBoxName.Text = "";
+            TextBoxAge.Text = "";
+            TextBoxSex.Text = "";
+            textBoxContactPerson.Text = "";
+            TextBoxBirthday.Text = "";
+            TextBoxMedCon.Text = "";
+            LabelGetID.Text = "";
+            PictureBoxImageInput.Paint += new PaintEventHandler((sender, e) =>
+            {
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+                string Text = "Click here \n to \n browse image.";
+                SizeF textSize = e.Graphics.MeasureString(Text, Font);
+                PointF locationToDraw = new PointF();
+                locationToDraw.X = (PictureBoxImageInput.Width / 2) - (textSize.Width / 2);
+                locationToDraw.Y = (PictureBoxImageInput.Height / 2) - (textSize.Height/2);
+                e.Graphics.DrawString(Text, Font, Brushes.Black, locationToDraw);
+     
+            });
+
+
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -251,7 +271,13 @@ namespace SAD_2E_Project
 
         private void PictureBoxImageInput_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                PictureBoxImageInput.Image = new Bitmap(openFileDialog.FileName);
+                PictureBoxImageInput.ImageLocation = openFileDialog.FileName;      
+            }
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
@@ -275,7 +301,8 @@ namespace SAD_2E_Project
             PanelRegistrationEditUserData.Visible = true;
             PanelUserData.Visible = false;
             PanelConnection.Visible = false;
-            showData();
+            //showData();
+            ClearInputUpdateData();
         }
 
         private void PanelUserData_Paint(object sender, PaintEventArgs e)
@@ -295,7 +322,6 @@ namespace SAD_2E_Project
             catch(Exception ex)
             {
                 MessageBox.Show("COM Port not detected");
-                //comboBoxPorts.Items.Clear();
             }
         }
 
@@ -310,6 +336,128 @@ namespace SAD_2E_Project
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            System.IO.MemoryStream mstream = new System.IO.MemoryStream();
+
+            byte[] arrImage;
+
+            if(TextBoxName.Text == "")
+            {
+                MessageBox.Show("Name cannot be empty!");
+                return;
+            }
+            if (TextBoxAge.Text == "")
+            {
+                MessageBox.Show("Age cannot be empty!");
+                return;
+            }
+            if (TextBoxSex.Text == "")
+            {
+                MessageBox.Show("Sex cannot be empty!");
+                return;
+            }
+            if (textBoxContactPerson.Text == "")
+            {
+                MessageBox.Show("Contact Person cannot be empty!");
+                return;
+            }
+            if (TextBoxBirthday.Text == "")
+            {
+                MessageBox.Show("Birthday cannot be empty!");
+                return;
+            }
+            if (TextBoxMedCon.Text == "")
+            {
+                MessageBox.Show("Medical Conditions cannot be empty!");
+                return;
+            }
+
+            if(StatusInput == "Save")
+            {
+                if(PictureBoxImageInput.ImageLocation != "")
+                {
+                    PictureBoxImageInput.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    arrImage = mstream.GetBuffer();
+                }
+                else
+                {
+                    MessageBox.Show("Image has not been selected!");
+                }
+
+                try
+                {
+                    Connection.Open();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Connection failed! \n Please check server is turned on!");
+                    return;
+                }
+
+                try
+                {
+                    MySqlCommand command = new MySqlCommand();
+                    command.CommandText = "INSERT INTO " + tableName + "(Name, ID, Age, Sex, Contact_Person, Birthday, Medical Condition, Images) VALUES (@name, @ID, @Age, @Sex, @Contact_Person, @Birthday, @Medical_Conditions, @Images)";
+                    command.Connection = Connection;
+                    command.Parameters.AddWithValue("@Name", TextBoxName.Text);
+                    command.Parameters.AddWithValue("@ID", LabelGetID.Text);
+                    command.Parameters.AddWithValue("@Age", TextBoxAge.Text);
+                    command.Parameters.AddWithValue("@Sex", TextBoxSex.Text);
+                    command.Parameters.AddWithValue("@Contact_Person", textBoxContactPerson.Text);
+                    command.Parameters.AddWithValue("@Birthday", TextBoxBirthday.Text);
+                    command.Parameters.AddWithValue("@Medical_Conditions", TextBoxMedCon.Text);
+                    //command.Parameters.AddWithValue("@Images", arrImage);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Data saved successfully!");
+                    PictureBoxImageInput.ImageLocation = "";
+                    ClearInputUpdateData();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Data failed to save!");
+                    Connection.Close();
+                }
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void TextBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonScanID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelDateTime.Text = "Time " + DateTime.Now.ToString("HH:mm:ss") + "     Date " + DateTime.Now.ToString("dd MMM, yyyy");
+        }
+
+        private void timerSerialIn_Tick(object sender, EventArgs e)
         {
 
         }

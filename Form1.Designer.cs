@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonRegedit = new System.Windows.Forms.Button();
@@ -81,12 +82,19 @@
             this.ButtonSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.TextBoxCountry = new System.Windows.Forms.TextBox();
-            this.TextBoxCity = new System.Windows.Forms.TextBox();
-            this.TextBoxAddress = new System.Windows.Forms.TextBox();
+            this.TextBoxMedCon = new System.Windows.Forms.TextBox();
+            this.TextBoxSex = new System.Windows.Forms.TextBox();
+            this.TextBoxAge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxContactPerson = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TextBoxBirthday = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.datetimetimer = new System.Windows.Forms.Timer(this.components);
+            this.timerSerialIn = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.PanelUserData.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -475,20 +483,21 @@
             // 
             this.PanelRegistrationEditUserData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.PanelRegistrationEditUserData.Controls.Add(this.PanelReadingTagProcess);
+            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxBirthday);
+            this.PanelRegistrationEditUserData.Controls.Add(this.label14);
             this.PanelRegistrationEditUserData.Controls.Add(this.groupBox4);
             this.PanelRegistrationEditUserData.Controls.Add(this.Image);
             this.PanelRegistrationEditUserData.Controls.Add(this.groupBox1);
             this.PanelRegistrationEditUserData.Controls.Add(this.ButtonClearForm);
             this.PanelRegistrationEditUserData.Controls.Add(this.ButtonSave);
-            this.PanelRegistrationEditUserData.Controls.Add(this.label8);
             this.PanelRegistrationEditUserData.Controls.Add(this.label5);
-            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxCountry);
-            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxCity);
-            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxAddress);
+            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxMedCon);
+            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxSex);
+            this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxAge);
             this.PanelRegistrationEditUserData.Controls.Add(this.label2);
             this.PanelRegistrationEditUserData.Controls.Add(this.TextBoxName);
             this.PanelRegistrationEditUserData.Controls.Add(this.label1);
+            this.PanelRegistrationEditUserData.Controls.Add(this.PanelReadingTagProcess);
             this.PanelRegistrationEditUserData.Location = new System.Drawing.Point(250, 37);
             this.PanelRegistrationEditUserData.Margin = new System.Windows.Forms.Padding(2);
             this.PanelRegistrationEditUserData.Name = "PanelRegistrationEditUserData";
@@ -497,9 +506,12 @@
             // 
             // PanelReadingTagProcess
             // 
-            this.PanelReadingTagProcess.Controls.Add(this.pictureBox2);
-            this.PanelReadingTagProcess.Controls.Add(this.ButtonCloseReadingTag);
+            this.PanelReadingTagProcess.Controls.Add(this.label8);
+            this.PanelReadingTagProcess.Controls.Add(this.textBoxContactPerson);
             this.PanelReadingTagProcess.Controls.Add(this.label12);
+            this.PanelReadingTagProcess.Controls.Add(this.label13);
+            this.PanelReadingTagProcess.Controls.Add(this.ButtonCloseReadingTag);
+            this.PanelReadingTagProcess.Controls.Add(this.pictureBox2);
             this.PanelReadingTagProcess.Location = new System.Drawing.Point(10, 11);
             this.PanelReadingTagProcess.Margin = new System.Windows.Forms.Padding(2);
             this.PanelReadingTagProcess.Name = "PanelReadingTagProcess";
@@ -653,7 +665,6 @@
             // PictureBoxImageInput
             // 
             this.PictureBoxImageInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBoxImageInput.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxImageInput.Image")));
             this.PictureBoxImageInput.Location = new System.Drawing.Point(4, 17);
             this.PictureBoxImageInput.Margin = new System.Windows.Forms.Padding(2);
             this.PictureBoxImageInput.Name = "PictureBoxImageInput";
@@ -709,6 +720,7 @@
             this.ButtonScanID.TabIndex = 20;
             this.ButtonScanID.Text = "Scan";
             this.ButtonScanID.UseVisualStyleBackColor = true;
+            this.ButtonScanID.Click += new System.EventHandler(this.ButtonScanID_Click);
             // 
             // ButtonClearForm
             // 
@@ -729,61 +741,62 @@
             this.ButtonSave.TabIndex = 17;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 88);
+            this.label8.Location = new System.Drawing.Point(-2, 76);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 15);
+            this.label8.Size = new System.Drawing.Size(117, 15);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Country:";
+            this.label8.Text = "Medical Conditions:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 64);
+            this.label5.Location = new System.Drawing.Point(276, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 15);
+            this.label5.Size = new System.Drawing.Size(32, 15);
             this.label5.TabIndex = 15;
-            this.label5.Text = "City:";
+            this.label5.Text = "Sex:";
             // 
-            // TextBoxCountry
+            // TextBoxMedCon
             // 
-            this.TextBoxCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxMedCon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxCountry.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxCountry.Location = new System.Drawing.Point(65, 86);
-            this.TextBoxCountry.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxCountry.Name = "TextBoxCountry";
-            this.TextBoxCountry.Size = new System.Drawing.Size(447, 20);
-            this.TextBoxCountry.TabIndex = 14;
+            this.TextBoxMedCon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxMedCon.Location = new System.Drawing.Point(129, 85);
+            this.TextBoxMedCon.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxMedCon.Name = "TextBoxMedCon";
+            this.TextBoxMedCon.Size = new System.Drawing.Size(353, 20);
+            this.TextBoxMedCon.TabIndex = 14;
             // 
-            // TextBoxCity
+            // TextBoxSex
             // 
-            this.TextBoxCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxSex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxCity.Location = new System.Drawing.Point(65, 63);
-            this.TextBoxCity.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxCity.Name = "TextBoxCity";
-            this.TextBoxCity.Size = new System.Drawing.Size(447, 20);
-            this.TextBoxCity.TabIndex = 13;
+            this.TextBoxSex.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxSex.Location = new System.Drawing.Point(315, 17);
+            this.TextBoxSex.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxSex.Name = "TextBoxSex";
+            this.TextBoxSex.Size = new System.Drawing.Size(167, 20);
+            this.TextBoxSex.TabIndex = 13;
             // 
-            // TextBoxAddress
+            // TextBoxAge
             // 
-            this.TextBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxAddress.Location = new System.Drawing.Point(65, 37);
-            this.TextBoxAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.Size = new System.Drawing.Size(447, 20);
-            this.TextBoxAddress.TabIndex = 12;
+            this.TextBoxAge.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxAge.Location = new System.Drawing.Point(65, 37);
+            this.TextBoxAge.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxAge.Name = "TextBoxAge";
+            this.TextBoxAge.Size = new System.Drawing.Size(167, 20);
+            this.TextBoxAge.TabIndex = 12;
             // 
             // label2
             // 
@@ -792,9 +805,9 @@
             this.label2.Location = new System.Drawing.Point(8, 41);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Address:";
+            this.label2.Text = "Age: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // TextBoxName
@@ -805,8 +818,9 @@
             this.TextBoxName.Location = new System.Drawing.Point(65, 15);
             this.TextBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(447, 20);
+            this.TextBoxName.Size = new System.Drawing.Size(167, 20);
             this.TextBoxName.TabIndex = 10;
+            this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
             // label1
             // 
@@ -819,6 +833,64 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
+            // textBoxContactPerson
+            // 
+            this.textBoxContactPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxContactPerson.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxContactPerson.Location = new System.Drawing.Point(108, 54);
+            this.textBoxContactPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxContactPerson.Name = "textBoxContactPerson";
+            this.textBoxContactPerson.Size = new System.Drawing.Size(172, 20);
+            this.textBoxContactPerson.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(-3, 54);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 15);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Contact Person:";
+            // 
+            // TextBoxBirthday
+            // 
+            this.TextBoxBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxBirthday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxBirthday.Location = new System.Drawing.Point(315, 39);
+            this.TextBoxBirthday.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxBirthday.Name = "TextBoxBirthday";
+            this.TextBoxBirthday.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TextBoxBirthday.Size = new System.Drawing.Size(167, 20);
+            this.TextBoxBirthday.TabIndex = 32;
+            this.TextBoxBirthday.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(257, 39);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label14.Size = new System.Drawing.Size(54, 15);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Birthday";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // datetimetimer
+            // 
+            this.datetimetimer.Enabled = true;
+            this.datetimetimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timerSerialIn
+            // 
+            this.timerSerialIn.Interval = 10;
+            this.timerSerialIn.Tick += new System.EventHandler(this.timerSerialIn_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,9 +901,9 @@
             this.Controls.Add(this.labelConnectionStatus);
             this.Controls.Add(this.connectionStatus_Label);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelRegistrationEditUserData);
             this.Controls.Add(this.PanelConnection);
             this.Controls.Add(this.PanelUserData);
-            this.Controls.Add(this.PanelRegistrationEditUserData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -903,9 +975,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TextBoxCountry;
-        private System.Windows.Forms.TextBox TextBoxCity;
-        private System.Windows.Forms.TextBox TextBoxAddress;
+        private System.Windows.Forms.TextBox TextBoxMedCon;
+        private System.Windows.Forms.TextBox TextBoxSex;
+        private System.Windows.Forms.TextBox TextBoxAge;
         private System.Windows.Forms.GroupBox Image;
         private System.Windows.Forms.PictureBox PictureBoxImageInput;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -925,6 +997,13 @@
         private System.Windows.Forms.CheckBox CheckBoxByName;
         private System.Windows.Forms.TextBox TextBoxSearch;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TextBoxBirthday;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxContactPerson;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Timer datetimetimer;
+        private System.Windows.Forms.Timer timerSerialIn;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 
