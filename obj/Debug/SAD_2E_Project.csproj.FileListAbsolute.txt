@@ -34,3 +34,26 @@ D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Google.Protobu
 D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\MySql.Data.xml
 D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\bin\Debug\Renci.SshNet.xml
 D:\Desktop\SAD_2E_Project\SAD_2E_Project\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\Google.Protobuf.xml
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\MySql.Data.xml
+C:\Users\Mich\source\repos\SAD_2E_Project\bin\Debug\Renci.SshNet.xml
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+C:\Users\Mich\source\repos\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb
+D:\Desktop\Michi compsad\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+D:\Desktop\Michi compsad\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+D:\Desktop\Michi compsad\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb

@@ -118,6 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonCloseReadingTag.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAhCAYAAADOHBvaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAPxJREFUWEftl0kOg0AMBHlIjvn/z/IGokZqNAzlsdmkHFJSnRh3nZk+r/fc+hR9
+        ZxeWd0MNDMu7oG0ZhuVVaNNO2YOz0JYVS1jQA3kG2rFmDQt6KI9A97ZlExZ0ICvQne0ph2UG3UhiFxZ0
+        bCPorYzAsKAR20Nv5IgwLGjMGvomM4ZhQaMVM9KwoOGRFUphQQGySjksKNR6hH84hEJklVKYAiMrpGEa
+        lqNvMmMYpkFr6JsdEYZpyPbQGxuBYRqwEfTWErswHdoMurE9mzAd2Cp0a1tK4aPQhjVrmB7Js9CWFUuY
+        Psqr0KZ99E9C0K58/N9J0P7v/C0+xbbznr8hVp1NcVXb9QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhQABAAKUAAAQCBJyenERCRNTS1CQiJGRmZLS2tPTy9DQyNHR2dAwODKyqrFRSVNze3GxubMzK
@@ -223,23 +233,25 @@
         SU5UOEZRdFFiZk56cTdmTkFQZjBGN3RpcUN3Q1Zkeg==
 </value>
   </data>
-  <data name="ButtonCloseReadingTag.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAhCAYAAADOHBvaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        dAAAEnQB3mYfeAAAAPxJREFUWEftl0kOg0AMBHlIjvn/z/IGokZqNAzlsdmkHFJSnRh3nZk+r/fc+hR9
-        ZxeWd0MNDMu7oG0ZhuVVaNNO2YOz0JYVS1jQA3kG2rFmDQt6KI9A97ZlExZ0ICvQne0ph2UG3UhiFxZ0
-        bCPorYzAsKAR20Nv5IgwLGjMGvomM4ZhQaMVM9KwoOGRFUphQQGySjksKNR6hH84hEJklVKYAiMrpGEa
-        lqNvMmMYpkFr6JsdEYZpyPbQGxuBYRqwEfTWErswHdoMurE9mzAd2Cp0a1tK4aPQhjVrmB7Js9CWFUuY
-        Psqr0KZ99E9C0K58/N9J0P7v/C0+xbbznr8hVp1NcVXb9QAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>278, 17</value>
+  </metadata>
   <metadata name="datetimetimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="timerSerialIn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
+    <value>483, 11</value>
   </metadata>
   <metadata name="timer3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>191, 17</value>
+  </metadata>
+  <metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>603, 11</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>712, 11</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>47</value>
   </metadata>
 </root>
