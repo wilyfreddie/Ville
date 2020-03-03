@@ -100,9 +100,9 @@
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datetimetimer = new System.Windows.Forms.Timer(this.components);
-            this.timerSerialIn = new System.Windows.Forms.Timer(this.components);
+            this.TimerSerialIn = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.SerialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.PanelUserData.SuspendLayout();
@@ -919,11 +919,11 @@
             this.datetimetimer.Enabled = true;
             this.datetimetimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // timerSerialIn
+            // TimerSerialIn
             // 
-            this.timerSerialIn.Enabled = true;
-            this.timerSerialIn.Interval = 10;
-            this.timerSerialIn.Tick += new System.EventHandler(this.timerSerialIn_Tick);
+            this.TimerSerialIn.Enabled = true;
+            this.TimerSerialIn.Interval = 10;
+            this.TimerSerialIn.Tick += new System.EventHandler(this.TimerSerialIn_Tick);
             // 
             // openFileDialog1
             // 
@@ -1041,7 +1041,7 @@
         private System.Windows.Forms.TextBox textBoxContactPerson;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Timer datetimetimer;
-        private System.Windows.Forms.Timer timerSerialIn;
+        private System.Windows.Forms.Timer TimerSerialIn;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -1049,7 +1049,7 @@
         private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort SerialPort1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label16;
     }

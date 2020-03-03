@@ -11,7 +11,7 @@ namespace SAD_2E_Project
     public partial class Form1 : Form
     {
         // server=localhost; user=yout_database_user; password=your_database_password; database=your_database_name
-        SerialPort serialPort = new SerialPort();
+      //  SerialPort SerialPort1 = new SerialPort();
 
         string connectionString = "server=localhost; user=root; password=Cestlavie1!; port:3306; database=rfid_user_data";
         //MySqlConnection Connection;
@@ -125,10 +125,7 @@ namespace SAD_2E_Project
                 {
                     Connection.Open();
                 }
-                else
-                {
-                    return;
-                }
+             
 
             }
             catch
@@ -208,7 +205,7 @@ namespace SAD_2E_Project
 
         private void buttonUData_Click(object sender, EventArgs e)
         {
-            if (timerSerialIn.Enabled == false)                                                      //turn to false after debug
+            if (TimerSerialIn.Enabled == false)                                                      //turn to false after debug
             {
                 MessageBox.Show("Failed to open User Data!");
                 return;
@@ -262,27 +259,27 @@ namespace SAD_2E_Project
             {
                 try
                 {
-                    serialPort.PortName = comboBoxPorts.SelectedItem.ToString();
-                    serialPort.BaudRate = 115200;
-                    serialPort.Parity = Parity.None;
-                    serialPort.DataBits = 8;
-                    serialPort.StopBits = StopBits.One;
+                    SerialPort1.PortName = comboBoxPorts.SelectedItem.ToString();
+                    SerialPort1.BaudRate = 115200;
+                    SerialPort1.Parity = Parity.None;
+                    SerialPort1.DataBits = 8;
+                    SerialPort1.StopBits = StopBits.One;
                     //MessageBox.Show("Connecting to Serial Port " + comboBoxPorts.SelectedItem.ToString());
-                    serialPort.Open();
+                    SerialPort1.Open();
 
                     //MessageBox.Show("Connecting to Serial Port hello" + comboBoxPorts.SelectedItem.ToString());
                     buttonConnectDevice.Text = "Disconnect";
                     labelConnectionStatus.Text = "CONNECTED";
                     labelConnectionStatus.ForeColor = Color.Green;
                     //MessageBox.Show("Connecting to Serial Port bye" + comboBoxPorts.SelectedItem.ToString());
-                    timerSerialIn.Start();
+                    TimerSerialIn.Start();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Failed to connect!");
                     labelConnectionStatus.Text = "DISCONNECTED";
                     labelConnectionStatus.ForeColor = Color.Red;
-                    //timerSerialIn.Start();
+                    //TimerSerialIn.Start();
           
                 }
                 return;
@@ -291,10 +288,10 @@ namespace SAD_2E_Project
 
             else if (buttonConnectDevice.Text == "Disconnect")
             {
-                serialPort.Close();
+                SerialPort1.Close();
                 labelConnectionStatus.Text = "DISCONNECTED";
                 labelConnectionStatus.ForeColor = Color.Red;
-                //timerSerialIn.Stop();
+                //TimerSerialIn.Stop();
                 buttonConnectDevice.Text = "Connect";
             }
             PanelRegistrationEditUserData.Visible = false;
@@ -384,7 +381,7 @@ namespace SAD_2E_Project
                 try
                 {
                     MySqlCommand command = new MySqlCommand();
-                    command.CommandText = "INSERT INTO " + tableName + "(Name, ID, Age, Sex, Contact_Person, Birthday, Medical_Conditions, Images) VALUES (@name, @ID, @Age, @Sex, @Contact_Person, @Birthday, @Medical_Conditions, @Images)";
+                    command.CommandText = "INSERT INTO " + tableName + "(Name, ID, Age, Sex, Contact_Person, Birthday, Medical_Conditions, Images) VALUES (@Name, @ID, @Age, @Sex, @Contact_Person, @Birthday, @Medical_Conditions, @Images)";
                     command.Connection = Connection;
                     command.Parameters.AddWithValue("@Name", TextBoxName.Text);
                     command.Parameters.AddWithValue("@ID", LabelGetID.Text);
@@ -421,7 +418,7 @@ namespace SAD_2E_Project
 
         private void ButtonScanID_Click(object sender, EventArgs e)
         {
-            if (timerSerialIn.Enabled == true)
+            if (TimerSerialIn.Enabled == true)
             {
                 PanelReadingTagProcess.Visible = true;
                 GetID = true;
@@ -638,11 +635,11 @@ namespace SAD_2E_Project
             showData();
         }
 
-        private void timerSerialIn_Tick(object sender, EventArgs e)
+        private void TimerSerialIn_Tick(object sender, EventArgs e)
         {
             try
             {
-                StrSerialIn = serialPort.ReadExisting();
+                StrSerialIn = SerialPort1.ReadExisting();
                 //labelConnectionStatus.Text = "CONNECTED";
                 Console.WriteLine(StrSerialIn);
 
@@ -650,18 +647,24 @@ namespace SAD_2E_Project
                 {
                     IDtemp = StrSerialIn;
                     label7.Text = StrSerialIn;
+                    LabelGetID.Text = StrSerialIn;
                     //MessageBox.Show(StrSerialIn);
                     if (GetID == true)
                     {
-                        LabelGetID.Text = StrSerialIn;
+                        MessageBox.Show("GetID is true");
                         label7.Text = StrSerialIn;
                         IDtemp = StrSerialIn;
+                        MessageBox.Show("LabelGetID is" + LabelGetID.Text);
                         GetID = false;
-                        if (LabelGetID.Text != "________")
+                        if (LabelGetID.Text != "_________")
                         {
+                          
                             PanelReadingTagProcess.Visible = false;
+                            
                             IDCheck();
                             label7.Text = StrSerialIn;
+                            LabelGetID.Text = StrSerialIn;
+
                         }
                     }
                     if (ViewUserData == true)
@@ -671,8 +674,8 @@ namespace SAD_2E_Project
             catch (Exception ex)
             {
                // MessageBox.Show(StrSerialIn);
-                timerSerialIn.Stop();
-                serialPort.Close();
+                TimerSerialIn.Stop();
+                SerialPort1.Close();
                 MessageBox.Show("Failed to connect !!!");
                 button1_Click(sender, e);
                 return;
@@ -697,10 +700,8 @@ namespace SAD_2E_Project
                 if(Connection.State.ToString() == "Closed")
                 {
                     Connection.Open();
-                }
-                else
-                {
-                    return;
+                    MessageBox.Show("Data is " + Data);
+
                 }
                 
             }
@@ -712,6 +713,7 @@ namespace SAD_2E_Project
 
             try
             {
+                
                 MySQLCMD.CommandType = CommandType.Text;
                 MySQLCMD.CommandText = "SELECT * FROM " + tableName + " WHERE ID LIKE '" + LabelGetID.Text + "'";
                 MySQLDA = new MySqlDataAdapter(MySQLCMD.CommandText, Connection);
@@ -725,7 +727,7 @@ namespace SAD_2E_Project
                         Connection.Close();
                         ButtonScanID.Enabled = true;
                         GetID = false;
-                        LabelGetID.Text = "________";
+                        //LabelGetID.Text = "________";
                         return;
                     }
                     else
@@ -736,7 +738,7 @@ namespace SAD_2E_Project
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                         imgStr.Close();
 
-                        LabelGetID.Text = (string)DT.Rows[0]["ID"];
+                        //LabelGetID.Text = (string)DT.Rows[0]["ID"];
                         TextBoxName.Text = (string)DT.Rows[0]["Name"];
                         TextBoxAge.Text = (string)DT.Rows[0]["Age"];
                         TextBoxSex.Text = (string)DT.Rows[0]["Sex"];
@@ -747,7 +749,7 @@ namespace SAD_2E_Project
                     }
                 }
 
-
+                
             }
             catch (Exception ex)
             {
@@ -767,7 +769,9 @@ namespace SAD_2E_Project
         {
             label7.Text = StrSerialIn;
             if (label7.Text == "_________")
+            {
                 ViewData();
+            }
             else
                 showDataUser();
         }
