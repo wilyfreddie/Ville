@@ -57,3 +57,16 @@ D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.Generate
 D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
 D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
 D:\Desktop\Michi compsad\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe.config
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\SAD_2E_Project.exe
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\SAD_2E_Project.pdb
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\Google.Protobuf.xml
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\MySql.Data.xml
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\bin\Debug\Renci.SshNet.xml
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.csprojAssemblyReference.cache
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.Form1.resources
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.Properties.Resources.resources
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.GenerateResource.cache
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.csproj.CopyComplete
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.exe
+C:\Users\Mich\Documents\GitHub\SAD_2E_Project\obj\Debug\SAD_2E_Project.pdb

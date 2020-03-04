@@ -13,9 +13,8 @@ namespace SAD_2E_Project
         // server=localhost; user=yout_database_user; password=your_database_password; database=your_database_name
       //  SerialPort SerialPort1 = new SerialPort();
 
-        string connectionString = "server=localhost; user=root; password=Cestlavie1!; port:3306; database=rfid_user_data";
         //MySqlConnection Connection;
-        MySqlConnection Connection = new MySqlConnection("server=localhost; user=root; password=Cestlavie1!; port=3306; database=rfid_user_data");
+        MySqlConnection Connection = new MySqlConnection("server=localhost; user=root; password=; port=3306; database=rfid_user_data");
         MySqlCommand MySQLCMD = new MySqlCommand();
         private MySqlDataAdapter MySQLDA = new MySqlDataAdapter();
         private DataTable DT = new DataTable();
@@ -136,9 +135,9 @@ namespace SAD_2E_Project
             try
             {
                 MySqlCommand command = new MySqlCommand();
-                command.CommandType = CommandType.Text;
+                command.CommandType = CommandType.Text; 
                 //command.CommandText = "Select * FROM " + tableName + " WHERE ID LIKE '" + LabelGetID.Text.Substring(5, LabelGetID.Text.Length -5) + "'";
-                command.CommandText = "Select * FROM " + tableName + " WHERE ID LIKE '" + IDtemp + "'";
+                command.CommandText = "Select * FROM " + tableName + " WHERE ID LIKE '" + IDtemp.Substring(0, 7) + "'";
                 //MessageBox.Show(command.CommandText);
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command.CommandText, Connection);
                 
@@ -350,15 +349,15 @@ namespace SAD_2E_Project
 
             if(StatusInput == "Save" || StatusInput == "Update")
             {
-                if(PictureBoxImageInput.ImageLocation != "")
-                {
-                    PictureBoxImageInput.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    arrImage = mstream.GetBuffer();
-                }
-                else
-                {
-                    MessageBox.Show("Image has not been selected!");
-                }
+                //if(PictureBoxImageInput.ImageLocation != "")
+                //{
+                //    PictureBoxImageInput.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //    arrImage = mstream.GetBuffer();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Image has not been selected!");
+                //}
 
                 try
                 {
@@ -381,10 +380,11 @@ namespace SAD_2E_Project
                 try
                 {
                     MySqlCommand command = new MySqlCommand();
-                    command.CommandText = "INSERT INTO " + tableName + "(Name, ID, Age, Sex, Contact_Person, Birthday, Medical_Conditions, Images) VALUES (@Name, @ID, @Age, @Sex, @Contact_Person, @Birthday, @Medical_Conditions, @Images)";
+                    command.CommandText = "UPDATE " + tableName + " SET Name = '" + TextBoxName.Text  + "', Age ="+ TextBoxAge.Text + ", Sex = '" + TextBoxSex.Text + "', Birthday = '" + TextBoxBirthday.Text + "', Contact_Person = '" + textBoxContactPerson.Text + "', Medical_Conditions = '" + TextBoxMedCon.Text + "' WHERE ID = '" + IDtemp.Substring(0, 7) + "'";
+                   // command.CommandText = "INSERT INTO " + tableName + " (Name, ID, Age, Sex, Birthday, Contact_Person, Medical_Conditions) VALUES (@Name, @ID, @Age, @Sex, @Birthday, @Contact_Person, @Medical_Conditions)";
                     command.Connection = Connection;
                     command.Parameters.AddWithValue("@Name", TextBoxName.Text);
-                    command.Parameters.AddWithValue("@ID", LabelGetID.Text);
+                    command.Parameters.AddWithValue("@ID", IDtemp.Substring(0,7));
                     command.Parameters.AddWithValue("@Age", TextBoxAge.Text);
                     command.Parameters.AddWithValue("@Sex", TextBoxSex.Text);
                     command.Parameters.AddWithValue("@Contact_Person", textBoxContactPerson.Text);
@@ -397,9 +397,10 @@ namespace SAD_2E_Project
                     PictureBoxImageInput.ImageLocation = "";
                     ClearInputUpdateData();
                 }
-                catch(Exception ex)
+                catch(MySqlException ex)
                 {
-                    MessageBox.Show("Data failed to save!");
+                    int errorcode = ex.Number;
+                    MessageBox.Show("Data failed to save! " + errorcode.ToString());
                     Connection.Close();
                 }
 
@@ -651,16 +652,16 @@ namespace SAD_2E_Project
                     //MessageBox.Show(StrSerialIn);
                     if (GetID == true)
                     {
-                        MessageBox.Show("GetID is true");
+                       
                         label7.Text = StrSerialIn;
                         IDtemp = StrSerialIn;
-                        MessageBox.Show("LabelGetID is" + LabelGetID.Text);
+                        MessageBox.Show("LabelGetID is " + LabelGetID.Text);
                         GetID = false;
                         if (LabelGetID.Text != "_________")
                         {
                           
                             PanelReadingTagProcess.Visible = false;
-                            
+                            MessageBox.Show("TEST");
                             IDCheck();
                             label7.Text = StrSerialIn;
                             LabelGetID.Text = StrSerialIn;
@@ -715,7 +716,9 @@ namespace SAD_2E_Project
             {
                 
                 MySQLCMD.CommandType = CommandType.Text;
-                MySQLCMD.CommandText = "SELECT * FROM " + tableName + " WHERE ID LIKE '" + LabelGetID.Text + "'";
+                MySQLCMD.CommandText = "SELECT * FROM " + tableName + " WHERE ID LIKE '" + IDtemp.Substring(0, 7) + "'";
+            
+
                 MySQLDA = new MySqlDataAdapter(MySQLCMD.CommandText, Connection);
                 DT = new DataTable();
                 Data = MySQLDA.Fill(DT);
