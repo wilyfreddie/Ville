@@ -47,6 +47,8 @@ namespace SAD_2E_Project
             PanelRegistrationEditUserData.Visible = false;
             PanelUserData.Visible = false;
             PanelConnection.Visible = true;
+            PanelCalculation.Visible = false;
+            PanelTimeIn.Visible = false;
         }
 
         private void showData()
@@ -200,6 +202,8 @@ namespace SAD_2E_Project
             PanelRegistrationEditUserData.Visible = false;
             PanelUserData.Visible = false;
             PanelConnection.Visible = true;
+            PanelCalculation.Visible = false;
+            PanelTimeIn.Visible = false;
         }
 
         private void buttonUData_Click(object sender, EventArgs e)
@@ -216,6 +220,8 @@ namespace SAD_2E_Project
                 PanelRegistrationEditUserData.Visible = false;
                 PanelConnection.Visible = false;
                 PanelUserData.Visible = true;
+                PanelCalculation.Visible = false;
+                PanelTimeIn.Visible = false;
             }
 
         }
@@ -226,6 +232,7 @@ namespace SAD_2E_Project
             PanelRegistrationEditUserData.Visible = true;
             PanelUserData.Visible = false;
             PanelConnection.Visible = false;
+            PanelTimeIn.Visible = false;
             ViewUserData = false;
             showData();
             ClearInputUpdateData();
@@ -296,6 +303,9 @@ namespace SAD_2E_Project
             PanelRegistrationEditUserData.Visible = false;
             PanelUserData.Visible = false;
             PanelConnection.Visible = true;
+            PanelConnection.Visible = true;
+            PanelCalculation.Visible = false;
+            PanelTimeIn.Visible = false;
         }   /// Connect Device Button
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -792,6 +802,55 @@ namespace SAD_2E_Project
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+     
+        private void ButtonCalculation_Click(object sender, EventArgs e)
+        {
+            PanelRegistrationEditUserData.Visible = false;
+            PanelUserData.Visible = false;
+            PanelConnection.Visible = false;
+            PanelCalculation.Visible = true;
+            PanelTimeIn.Visible = false;
+        }
+
+        private void ButtonTimeInOut_Click(object sender, EventArgs e)
+        {
+            PanelRegistrationEditUserData.Visible = false;
+            PanelUserData.Visible = false;
+            PanelConnection.Visible = false;
+            PanelCalculation.Visible = false;
+            PanelTimeIn.Visible = true;
         }
     }
 }
