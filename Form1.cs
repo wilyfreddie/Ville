@@ -475,14 +475,14 @@ namespace SAD_2E_Project
                 if (TextBoxSearch.Text == null/* TODO Change to default(_) if this is not a reference type */ )
                     SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM" + tableName + " ORDER BY Name";
                 else
-                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + "' WHERE `ID` LIKE'" + TextBoxSearch.Text + "%'";
+                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + "' WHERE `ID` ='" + TextBoxSearch.Text + "%'";
             }
             if (CheckBoxByName.Checked == true)
             {
                 if (TextBoxSearch.Text == null/* TODO Change to default(_) if this is not a reference type */ )
                     SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " ORDER BY Name";
                 else
-                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " WHERE Name LIKE'" + TextBoxSearch.Text + "%'";
+                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " WHERE Name ='" + TextBoxSearch.Text + "%'";
             }
 
             try
