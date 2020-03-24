@@ -96,7 +96,8 @@ namespace SAD_2E_Project
                 {
                     MySqlCommand command = new MySqlCommand();
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "Select Images FROM" + tableName + "WHERE ID LIKE '" + IDRam + "'";
+                    command.CommandText = "Select Images FROM" + tableName + "WHERE `ID` = '" + IDRam + "'";
+                    
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command.CommandText, Connection);
 
                     DataTable DT = new DataTable();
@@ -140,7 +141,7 @@ namespace SAD_2E_Project
                 MySqlCommand command = new MySqlCommand();
                 command.CommandType = CommandType.Text; 
                 //command.CommandText = "Select * FROM " + tableName + " WHERE ID LIKE '" + LabelGetID.Text.Substring(5, LabelGetID.Text.Length -5) + "'";
-                command.CommandText = "Select * FROM " + tableName + " WHERE ID LIKE '" + IDtemp.Substring(0, 7) + "'";
+                command.CommandText = "Select * FROM " + tableName + " WHERE `ID` = '" + IDtemp.Substring(0, 8) + "'";
                 //MessageBox.Show(command.CommandText);
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command.CommandText, Connection);
                 
@@ -164,7 +165,8 @@ namespace SAD_2E_Project
                     labelMedical.Text = (string)DT.Rows[0]["Medical_Conditions"];
                 }
                 else
-                    MessageBox.Show("ID not found! \nPlease Register your ID!");
+                
+                MessageBox.Show("ID not found! \nPlease Register your ID!");
             }
 
             catch 
@@ -391,11 +393,11 @@ namespace SAD_2E_Project
                 try
                 {
                     MySqlCommand command = new MySqlCommand();
-                    command.CommandText = "UPDATE " + tableName + " SET Name = '" + TextBoxName.Text  + "', Age ="+ TextBoxAge.Text + ", Sex = '" + TextBoxSex.Text + "', Birthday = '" + TextBoxBirthday.Text + "', Contact_Person = '" + textBoxContactPerson.Text + "', Medical_Conditions = '" + TextBoxMedCon.Text + "' WHERE ID = '" + IDtemp.Substring(0, 7) + "'";
+                    command.CommandText = "UPDATE " + tableName + " SET Name = '" + TextBoxName.Text  + "', Age ="+ TextBoxAge.Text + ", Sex = '" + TextBoxSex.Text + "', Birthday = '" + TextBoxBirthday.Text + "', Contact_Person = '" + textBoxContactPerson.Text + "', Medical_Conditions = '" + TextBoxMedCon.Text + "' WHERE `ID` = '" + IDtemp.Substring(0, 8) + "'";
                    // command.CommandText = "INSERT INTO " + tableName + " (Name, ID, Age, Sex, Birthday, Contact_Person, Medical_Conditions) VALUES (@Name, @ID, @Age, @Sex, @Birthday, @Contact_Person, @Medical_Conditions)";
                     command.Connection = Connection;
                     command.Parameters.AddWithValue("@Name", TextBoxName.Text);
-                    command.Parameters.AddWithValue("@ID", IDtemp.Substring(0,7));
+                    command.Parameters.AddWithValue("@ID", IDtemp.Substring(0,8));
                     command.Parameters.AddWithValue("@Age", TextBoxAge.Text);
                     command.Parameters.AddWithValue("@Sex", TextBoxSex.Text);
                     command.Parameters.AddWithValue("@Contact_Person", textBoxContactPerson.Text);
@@ -474,14 +476,14 @@ namespace SAD_2E_Project
                 if (TextBoxSearch.Text == null/* TODO Change to default(_) if this is not a reference type */ )
                     SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM" + tableName + " ORDER BY Name";
                 else
-                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + "' WHERE 'ID' LIKE'" + TextBoxSearch.Text + "%'";
+                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + "' WHERE `ID` ='" + TextBoxSearch.Text + "%'";
             }
             if (CheckBoxByName.Checked == true)
             {
                 if (TextBoxSearch.Text == null/* TODO Change to default(_) if this is not a reference type */ )
                     SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " ORDER BY Name";
                 else
-                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " WHERE Name LIKE'" + TextBoxSearch.Text + "%'";
+                    SqlCmdSearchStr = "SELECT `Name`, `ID`, `Age`, `Sex`, `Birthday`, `Contact_Person`, `Medical_Conditions`, `Images` FROM " + tableName + " WHERE Name ='" + TextBoxSearch.Text + "%'";
             }
 
             try
@@ -615,7 +617,7 @@ namespace SAD_2E_Project
                     if (row.Selected == true)
                     {
                         MySQLCMD.CommandType = CommandType.Text;
-                        MySQLCMD.CommandText = "DELETE FROM " + tableName + " WHERE ID='" + row.DataBoundItem.ToString() + "'";
+                        MySQLCMD.CommandText = "DELETE FROM " + tableName + " WHERE `ID` = '" + row.DataBoundItem.ToString() + "'";
                         MySQLCMD.Connection = Connection;
                         MySQLCMD.ExecuteNonQuery();
                     }
@@ -727,7 +729,7 @@ namespace SAD_2E_Project
             {
                 
                 MySQLCMD.CommandType = CommandType.Text;
-                MySQLCMD.CommandText = "SELECT * FROM " + tableName + " WHERE ID LIKE '" + IDtemp.Substring(0, 7) + "'";
+                MySQLCMD.CommandText = "SELECT * FROM " + tableName + " WHERE `ID` = '" + IDtemp.Substring(0, 8) + "'";
             
 
                 MySQLDA = new MySqlDataAdapter(MySQLCMD.CommandText, Connection);
