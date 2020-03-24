@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonTimeInOut = new System.Windows.Forms.Button();
             this.ButtonCalculation = new System.Windows.Forms.Button();
             this.buttonRegedit = new System.Windows.Forms.Button();
             this.buttonUData = new System.Windows.Forms.Button();
@@ -123,7 +124,6 @@
             this.LabelCalcID = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.ButtonCalcScan = new System.Windows.Forms.Button();
-            this.ButtonTimeInOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.PanelUserData.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -164,6 +164,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 470);
             this.panel1.TabIndex = 0;
+            // 
+            // ButtonTimeInOut
+            // 
+            this.ButtonTimeInOut.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonTimeInOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ButtonTimeInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonTimeInOut.ForeColor = System.Drawing.Color.White;
+            this.ButtonTimeInOut.Location = new System.Drawing.Point(42, 244);
+            this.ButtonTimeInOut.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonTimeInOut.Name = "ButtonTimeInOut";
+            this.ButtonTimeInOut.Size = new System.Drawing.Size(151, 32);
+            this.ButtonTimeInOut.TabIndex = 6;
+            this.ButtonTimeInOut.Text = "Time in/ Time out";
+            this.ButtonTimeInOut.UseVisualStyleBackColor = false;
+            this.ButtonTimeInOut.Click += new System.EventHandler(this.ButtonTimeInOut_Click);
             // 
             // ButtonCalculation
             // 
@@ -1218,21 +1233,6 @@
             this.ButtonCalcScan.TabIndex = 20;
             this.ButtonCalcScan.Text = "Scan";
             this.ButtonCalcScan.UseVisualStyleBackColor = true;
-            // 
-            // ButtonTimeInOut
-            // 
-            this.ButtonTimeInOut.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonTimeInOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ButtonTimeInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonTimeInOut.ForeColor = System.Drawing.Color.White;
-            this.ButtonTimeInOut.Location = new System.Drawing.Point(42, 244);
-            this.ButtonTimeInOut.Margin = new System.Windows.Forms.Padding(2);
-            this.ButtonTimeInOut.Name = "ButtonTimeInOut";
-            this.ButtonTimeInOut.Size = new System.Drawing.Size(151, 32);
-            this.ButtonTimeInOut.TabIndex = 6;
-            this.ButtonTimeInOut.Text = "Time in/ Time out";
-            this.ButtonTimeInOut.UseVisualStyleBackColor = false;
-            this.ButtonTimeInOut.Click += new System.EventHandler(this.ButtonTimeInOut_Click);
             // 
             // Form1
             // 

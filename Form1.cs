@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 
 namespace SAD_2E_Project
