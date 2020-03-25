@@ -1,0 +1,14 @@
+## [0.0.1] - 2020-03-25
+### Added
+- Time-In/Time-Out System
+- Export to Excel buttons for user data and session logs
+
+### Fixes
+- Disabled ability to update image for registered users
+
+### Changed
+- Converted database to SQLite for serverless/local operation
+
+### Bugs
+- Cannot scan multiple cards in RegEdit
+- Panels do not expand when window is maximised
